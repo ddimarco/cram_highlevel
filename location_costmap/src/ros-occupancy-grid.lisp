@@ -29,7 +29,8 @@
 (in-package :location-costmap)
 
 (defun grid-value-occupied-p (val)
-  (and (> val 0) (<= val 127)))
+  (or (and (> val 0) (<= val 127))
+      (< val 0)))
 
 (defun grid-value-not-occupied-p (val)
   (= val 0))
